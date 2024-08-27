@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import ArabalarModeli
+from .models import Arabalar
 
 
 # Register your models here.
 
-admin.site.register(ArabalarModeli),
+
+@admin.register(Arabalar)
+class ArabalarAdmin(admin.ModelAdmin):
+    list_display = ['Plaka','slug']
+

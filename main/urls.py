@@ -6,8 +6,7 @@ from Galeri import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index)
-    path('arac/', VIEW.as_view(), name=''),
-    
-    
+    path('',views.index),
+    path("Arac/<slug:slug>",views.detaylar,name="arac_detay")
+      
 ]

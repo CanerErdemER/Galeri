@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anasayfa</title>
 </head>
 <body>   
+    {% for item in arabalar %}
+    <ul>
+        <li><a href="{% url 'arac_detay' slug=item.slug %}">{{ item.Plaka }}</a></li>
+    </ul>
+        
+    {% endfor %}
+    
 </body>
 </html>
