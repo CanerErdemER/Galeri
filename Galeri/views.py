@@ -28,7 +28,9 @@ def arac_Cek(request):
             return redirect("arac_form")                      
     else:
         form = ArabalarForm()
-    return render(request, "aracdetay.html", {"form": form})
+    return render(request, "index.html", {"form": form})
+
+
 
 
 
