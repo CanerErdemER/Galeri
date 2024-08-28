@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
 from .models import Arabalar
+from .forms import ArabalarForm
 
 # Create your views here.
 
@@ -14,12 +16,22 @@ def detaylar(request,slug):
     
     return render(request,sayfa,ctx)
 
+def arac_Cek(request):
+    if request.method == "POST":
+        form = ArabalarForm(request.POST)
+        if form.is_valid():
+            # Plaka Marka_Model Fiyat modelsten geliyor
+            # plaka=form.cleaned_data["AracPlaka"]   
+            # model=form.cleaned_data["Marka_Model"] 
+            # fiyat=form.cleaned_data["Fiyat"]
+            form.save()
+            return redirect("arac_form")                      
+    else:
+        form = ArabalarForm()
+    return render(request, "aracdetay.html", {"form": form})
 
-# def detail(request,id):
-#     tema = 'home.html'
-#     context = {'ogrenci' : OgrenciModeli.objects.get(id=id)}
 
-#     return render(request, tema, context)
+
     
     
     
