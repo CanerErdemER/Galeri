@@ -9,3 +9,4 @@ from .models import Arabalar
 class ArabalarAdmin(admin.ModelAdmin):
     list_display = ['Plaka','slug']
 
+# admin.site.register(Arabalar)

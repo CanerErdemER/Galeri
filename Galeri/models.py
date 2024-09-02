@@ -1,7 +1,8 @@
 from django.db import models
 from django import forms
-# Create your models here.
 from autoslug import AutoSlugField
+
+
 class Arabalar(models.Model):
 
     Marka_Model=models.CharField(max_length=50)
